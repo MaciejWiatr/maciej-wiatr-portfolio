@@ -51,12 +51,22 @@ export default function Home() {
                             haha mam ochotę zjeść coś dobrego np pierogi czy coś
                             idk co ja mam tu wpisać 4real
                         </p>
-                        <form className="flex max-w-full">
+                        <form
+                            className="flex max-w-full"
+                            data-netlify="true"
+                            method="POST"
+                            name="contact-hero"
+                        >
                             <input
                                 className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72"
                                 placeholder="Email"
+                                type="email"
+                                name="email"
                             />
-                            <button className="ml-2 bg-primary rounded pl-3 pr-3 text-white text-sm md:text-base">
+                            <button
+                                className="ml-2 bg-primary rounded pl-3 pr-3 text-white text-sm md:text-base"
+                                type="submit"
+                            >
                                 Skontaktuj się ze mną
                             </button>
                         </form>
