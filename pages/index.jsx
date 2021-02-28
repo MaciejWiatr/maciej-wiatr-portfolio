@@ -57,6 +57,11 @@ export default function Home() {
                             method="POST"
                         >
                             <input
+                                type="hidden"
+                                name="form-name"
+                                value="Contact"
+                            />
+                            <input
                                 className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72"
                                 placeholder="Email"
                                 name="email"
