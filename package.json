@@ -1,32 +1,33 @@
 {
-  "name": "maciej-wiatr-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@svgr/webpack": "^5.5.0",
-    "hamburger-react": "^2.4.0",
-    "next": "10.0.7",
-    "next-images": "^1.7.0",
-    "next-react-svg": "^1.1.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-icons": "^4.2.0",
-    "tailwindcss-question-mark": "^0.1.0"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "autoprefixer": "^10.2.4",
-    "babel-plugin-inline-react-svg": "^2.0.1",
-    "postcss": "^8.2.6",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^2.0.3",
-    "typescript": "^4.2.2"
-  }
+    "name": "maciej-wiatr-portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "build:export": "next build && next export"
+    },
+    "dependencies": {
+        "@svgr/webpack": "^5.5.0",
+        "hamburger-react": "^2.4.0",
+        "next": "10.0.7",
+        "next-images": "^1.7.0",
+        "next-react-svg": "^1.1.2",
+        "react": "17.0.1",
+        "react-dom": "17.0.1",
+        "react-icons": "^4.2.0",
+        "tailwindcss-question-mark": "^0.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.31",
+        "@types/react": "^17.0.2",
+        "autoprefixer": "^10.2.4",
+        "babel-plugin-inline-react-svg": "^2.0.1",
+        "postcss": "^8.2.6",
+        "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-preset-env": "^6.7.0",
+        "tailwindcss": "^2.0.3",
+        "typescript": "^4.2.2"
+    }
 }
