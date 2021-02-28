@@ -55,6 +55,7 @@ export default function Home() {
                             className="flex max-w-full"
                             data-netlify="true"
                             method="POST"
+                            action="/success"
                         >
                             <input
                                 type="hidden"
