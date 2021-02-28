@@ -55,12 +55,10 @@ export default function Home() {
                             className="flex max-w-full"
                             data-netlify="true"
                             method="POST"
-                            name="contact-hero"
                         >
                             <input
                                 className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72"
                                 placeholder="Email"
-                                type="email"
                                 name="email"
                             />
                             <button
