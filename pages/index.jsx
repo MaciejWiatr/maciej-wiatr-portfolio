@@ -6,19 +6,6 @@ import { useRef } from "react";
 
 export default function Home() {
     const formRef = useRef(null);
-
-    handleSubmit = (e) => {
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", ...this.state }),
-        })
-            .then(() => alert("Success!"))
-            .catch((error) => alert(error));
-
-        e.preventDefault();
-    };
-
     return (
         <div className="w-screen xl:pl-48 xl:pr-48 max-w-screen-3xl">
             <Head>
