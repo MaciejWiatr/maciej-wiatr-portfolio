@@ -7,17 +7,16 @@ import { useRef } from "react";
 export default function Home() {
     const formRef = useRef(null);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let myForm = formRef.current;
-        let formData = new FormData(myForm);
+    handleSubmit = (e) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
+            body: encode({ "form-name": "contact", ...this.state }),
         })
-            .then(() => console.log("Form successfully submitted"))
+            .then(() => alert("Success!"))
             .catch((error) => alert(error));
+
+        e.preventDefault();
     };
 
     return (
@@ -70,8 +69,15 @@ export default function Home() {
                         <form
                             className="flex max-w-full"
                             ref={formRef}
-                            onSubmit={handleSubmit}
+                            name="contact"
+                            method="POST"
+                            data-netlify="true"
                         >
+                            <input
+                                type="hidden"
+                                name="form-name"
+                                value="contact"
+                            />
                             <input
                                 className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72"
                                 placeholder="Email"
