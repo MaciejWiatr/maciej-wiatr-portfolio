@@ -2,8 +2,24 @@ import Head from "next/head";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import HeroImg from "../assets/hero_img.svg";
 import { Fade as Hamburger } from "hamburger-react";
+import { useRef } from "react";
 
 export default function Home() {
+    const formRef = useRef(null);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let myForm = formRef.current;
+        let formData = new FormData(myForm);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => console.log("Form successfully submitted"))
+            .catch((error) => alert(error));
+    };
+
     return (
         <div className="w-screen xl:pl-48 xl:pr-48 max-w-screen-3xl">
             <Head>
@@ -53,15 +69,9 @@ export default function Home() {
                         </p>
                         <form
                             className="flex max-w-full"
-                            data-netlify="true"
-                            method="POST"
-                            action="/success"
+                            ref={formRef}
+                            onSubmit={handleSubmit}
                         >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="Contact"
-                            />
                             <input
                                 className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72"
                                 placeholder="Email"
