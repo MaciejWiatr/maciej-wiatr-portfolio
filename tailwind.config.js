@@ -10,8 +10,10 @@ module.exports = {
                 "purple-bg": "#F9F9FC",
                 "main-gray": "#A9ACBF",
                 primary: "#5222D0",
+                "primary--dark": "#4111C0",
                 dark: "#161616",
                 "secondary-gray": "#B2B2B2",
+                "bg-gray": "#0F1221",
             },
             maxWidth: {
                 "screen-3xl": "1720px",
