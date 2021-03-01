@@ -151,8 +151,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section id="opinions" className="h-screen w-full">
-                <div className="w-full bg-bg-gray relative flex flex-col lg:flex-row p-8 pt-12 pb-12">
+            <section id="opinions" className="h-screen w-full overflow-hidden">
+                <div className="w-full bg-bg-gray relative flex flex-col lg:flex-row p-8 pt-12 pb-12 overflow-hidden">
                     <div className="w-full lg:w-2/5 text-white lg:pl-20">
                         <h3 className="text-sm text-gray-600 mb-2 font-semibold">
                             Co mówią o mnie inni
