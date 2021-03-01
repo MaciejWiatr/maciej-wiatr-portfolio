@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
                 />
                 <meta name="robots" content="index, follow" />
                 <meta
-                    httpEequiv="Content-Type"
+                    httpeequiv="Content-Type"
                     content="text/html; charset=utf-8"
                 />
                 <meta name="language" content="English" />

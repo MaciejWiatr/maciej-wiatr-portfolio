@@ -19,6 +19,7 @@ module.exports = {
             },
             maxWidth: {
                 "screen-3xl": "1720px",
+                "screen-4xl": "1920px",
             },
             minWidth: {
                 16: "16rem",
@@ -31,13 +32,20 @@ module.exports = {
     plugins: [
         require("tailwindcss-question-mark"),
         plugin(({ addUtilities }) => {
-            const flexUtils = {
+            const utils = {
                 ".flex-center": {
                     "justify-content": "center",
                     "align-items": "center",
                 },
+                ".no-scrollbar": {
+                    "-ms-overflow-style": "none",
+                    "scrollbar-width": "none",
+                },
+                ".no-scrollbar::-webkit-scrollbar": {
+                    display: "none",
+                },
             };
-            addUtilities(flexUtils);
+            addUtilities(utils);
         }),
     ],
 };

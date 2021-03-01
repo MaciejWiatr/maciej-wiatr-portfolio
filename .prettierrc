@@ -1,0 +1,12 @@
+{
+    "printWidth": 80,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.js*",
+            "options": {
+                "prettier.printWidth": 50
+            }
+        }
+    ]
+}
