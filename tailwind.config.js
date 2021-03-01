@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
     purge: [
         "./pages/**/*.{js,ts,jsx,tsx}",
@@ -18,10 +20,24 @@ module.exports = {
             maxWidth: {
                 "screen-3xl": "1720px",
             },
+            minWidth: {
+                16: "16rem",
+            },
         },
     },
     variants: {
         extend: {},
     },
-    plugins: [require("tailwindcss-question-mark")],
+    plugins: [
+        require("tailwindcss-question-mark"),
+        plugin(({ addUtilities }) => {
+            const flexUtils = {
+                ".flex-center": {
+                    "justify-content": "center",
+                    "align-items": "center",
+                },
+            };
+            addUtilities(flexUtils);
+        }),
+    ],
 };
