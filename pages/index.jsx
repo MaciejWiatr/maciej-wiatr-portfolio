@@ -9,8 +9,10 @@ import {
     FiChevronLeft,
 } from "react-icons/fi";
 import HeroImg from "../assets/hero_img.svg";
+import PixelatedProp from "../assets/pixelated_prop.svg";
 import { Fade as Hamburger } from "hamburger-react";
 import { useRef, useState } from "react";
+import GameListElement from "../components/GameListElement";
 
 export default function Home() {
     const [navOpen, setNavOpen] = useState(false);
@@ -27,7 +29,7 @@ export default function Home() {
     };
 
     return (
-        <div className="w-screen pl-0 pr-0 lg:pl-32 lg:pr-32 xl:pl-48 xl:pr-48 max-w-screen-4xl">
+        <div className="w-screen pl-0 pr-0 lg:pl-12 lg:pr-12 xl:pl-48 xl:pr-48 max-w-screen-4xl">
             <Head>
                 <title>Maciej Wiatr</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -151,8 +153,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section id="opinions" className="h-screen w-full overflow-hidden">
-                <div className="w-full bg-bg-gray relative flex flex-col lg:flex-row p-8 pt-12 pb-12 overflow-hidden">
+            <section id="opinions" className="w-full overflow-hidden">
+                <div className="w-full bg-bg-gray relative flex flex-col lg:flex-row p-8 pt-16 pb-16 overflow-hidden">
                     <div className="w-full lg:w-2/5 text-white lg:pl-20">
                         <h3 className="text-sm text-gray-600 mb-2 font-semibold">
                             Co mówią o mnie inni
@@ -261,6 +263,53 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="h-screen w-full relative">
+                <div className="hidden md:block absolute right-0 w-96 -top-14 z-0">
+                    <PixelatedProp />
+                </div>
+                <div className="w-full md:w-3/5 p-6 md:pl-28 pt-16 pb-16 text-center md:text-left relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold">
+                        Technologie
+                        <br />
+                        <span className="text-primary">&</span>Umiejętności
+                    </h2>
+                    <p className="w-full md:w-96 mt-4 mb-4 leading-6 text-gray-500">
+                        convallis vehicula felis mi sed justo. In eu quam sit
+                        amet sapien malesuada porttitor. Nam ullamcorper felis
+                        quam, suscipit tempus eros lobortis at. Nunc{" "}
+                    </p>
+                    <div className="flex">
+                        <div className="w-1/2">
+                            <h1 className="text-2xl text-center md:text-left md:text-3xl leading-7">
+                                <span className="font-bold">Backend</span>
+                                <br />
+                                Development
+                            </h1>
+                            <ul className="flex flex-wrap justify-center md:justify-start space-x-3 p-4 md:p-2 md:pl-0 border-r md:border-none">
+                                <GameListElement src="/logos/django.png" />
+                                <GameListElement src="/logos/python.png" />
+                                <GameListElement src="/logos/node.png" />
+                                <GameListElement src="/logos/mongo.png" />
+                            </ul>
+                        </div>
+                        <div className="w-1/2">
+                            <h1 className="text-2xl text-center md:text-left md:text-3xl leading-7">
+                                <span className="font-bold">Frontend</span>
+                                <br />
+                                Development
+                            </h1>
+                            <ul className="flex flex-wrap justify-center md:justify-start space-x-3 p-4 md:p-2 md:pl-0">
+                                <GameListElement src="/logos/react.png" />
+                                <GameListElement src="/logos/js.png" />
+                                <GameListElement src="/logos/ts.png" />
+                                <GameListElement src="/logos/next.png" />
+                                <GameListElement src="/logos/tail.png" />
+                                <GameListElement src="/logos/boot.png" />
+                            </ul>
                         </div>
                     </div>
                 </div>

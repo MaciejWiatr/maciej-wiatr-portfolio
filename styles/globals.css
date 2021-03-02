@@ -18,3 +18,55 @@ a {
 * {
     box-sizing: border-box;
 }
+
+#hero_img_svg__hand_r {
+    animation: handshake 5s ease infinite;
+    transform-origin: 120%;
+    transform-box: fill-box;
+}
+#hero_img_svg__cat {
+    animation: cat-floater 4s ease infinite;
+    transform-box: fill-box;
+}
+#hero_img_svg__background_n2,
+#hero_img_svg__background_n3,
+#hero_img_svg__background {
+    animation: scaleup 4s ease infinite;
+    transform-box: fill-box;
+}
+
+@keyframes handshake {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    0% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes cat-floater {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    50% {
+        transform: translateX(-25px) translateY(20px);
+    }
+    100% {
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
+@keyframes scaleup {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.01) rotate(1deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}

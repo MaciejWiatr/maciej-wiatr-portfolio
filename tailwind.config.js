@@ -44,6 +44,12 @@ module.exports = {
                 ".no-scrollbar::-webkit-scrollbar": {
                     display: "none",
                 },
+                ".desaturated": {
+                    filter: "saturate(0)",
+                },
+                ".desaturated:hover": {
+                    filter: "saturate(1)",
+                },
             };
             addUtilities(utils);
         }),
