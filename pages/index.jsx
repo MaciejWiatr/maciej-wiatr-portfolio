@@ -8,14 +8,17 @@ import {
     FiChevronRight,
     FiChevronLeft,
 } from "react-icons/fi";
-import HeroImg from "../assets/hero_img.svg";
 import PixelatedProp from "../assets/pixelated_prop.svg";
 import { Fade as Hamburger } from "hamburger-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import GameListElement from "../components/GameListElement";
+import ReactTooltip from "react-tooltip";
+import HeroElement from "../components/HeroElement";
+import TechnologiesElement from "../components/TechnologiesElement";
 
 export default function Home() {
     const [navOpen, setNavOpen] = useState(false);
+    const [showTips, setShowTips] = useState(false);
     const [sliderVal, setSliderVal] = useState(0);
 
     const handleSlider = (add) => {
@@ -27,6 +30,10 @@ export default function Home() {
             }
         });
     };
+
+    useEffect(() => {
+        setShowTips(true);
+    }, []);
 
     return (
         <div className="w-screen pl-0 pr-0 lg:pl-12 lg:pr-12 xl:pl-48 xl:pr-48 max-w-screen-4xl">
@@ -111,48 +118,7 @@ export default function Home() {
                     />
                 </button>
             </nav>
-            <section className="w-full mt-16 lg:mt-0">
-                <div className="relative p-5 pt-20 pb-20 lg:pt-40 lg:pb-40 bg-purple-bg w-full h-full md:h-4/5 rounded-lg flex justify-start overflow-hidden">
-                    <div className="w-full items-center lg:items-start lg:w-2/3 flex flex-col justify-center lg:pl-20 relative z-20">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-dark w-full text-center lg:text-left">
-                            <p>Fullstack developer</p>
-                            <p>którego</p>
-                            <p className="text-primary">potrzebujesz</p>
-                        </h1>
-                        <p className="max-w-md mb-4 mt-5 text-center md:text-left">
-                            Cześć, Mam na imię Maciej i w sumie to lorem ipsum
-                            haha mam ochotę zjeść coś dobrego np pierogi czy coś
-                            idk co ja mam tu wpisać 4real
-                        </p>
-                        <form
-                            className="flex flex-col sm:flex-row max-w-full"
-                            name="contact"
-                            method="POST"
-                            data-netlify="true"
-                        >
-                            <input
-                                type="hidden"
-                                name="form-name"
-                                value="contact"
-                            />
-                            <input
-                                className="h-12 rounded border-2 border-gray-200 pl-3 w-56 md:w-72 focus:ring-2 focus:outline-none max-w-full"
-                                placeholder="Email"
-                                name="email"
-                            />
-                            <button
-                                className="h-10 mt-1 sm:mt-0 sm:h-auto sm:ml-2 bg-primary rounded pl-3 pr-3 text-white text-sm md:text-base transition hover:bg-primary--dark"
-                                type="submit"
-                            >
-                                Skontaktuj się ze mną
-                            </button>
-                        </form>
-                    </div>
-                    <div className="hidden lg:block lg:absolute md:w-1/3 lg:w-1/2 max-w-2xl lg:-right-5 lg:top-1/4 transform lg:-translate-y-20 -rotate-12 z-10">
-                        <HeroImg />
-                    </div>
-                </div>
-            </section>
+            <HeroElement />
             <section id="opinions" className="w-full overflow-hidden">
                 <div className="w-full bg-bg-gray relative flex flex-col lg:flex-row p-8 pt-16 pb-16 overflow-hidden">
                     <div className="w-full lg:w-2/5 text-white lg:pl-20">
@@ -267,53 +233,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="h-screen w-full relative">
-                <div className="hidden md:block absolute right-0 w-96 -top-14 z-0">
-                    <PixelatedProp />
-                </div>
-                <div className="w-full md:w-3/5 p-6 md:pl-28 pt-16 pb-16 text-center md:text-left relative z-10">
-                    <h2 className="text-4xl md:text-5xl font-bold">
-                        Technologie
-                        <br />
-                        <span className="text-primary">&</span>Umiejętności
-                    </h2>
-                    <p className="w-full md:w-96 mt-4 mb-4 leading-6 text-gray-500">
-                        convallis vehicula felis mi sed justo. In eu quam sit
-                        amet sapien malesuada porttitor. Nam ullamcorper felis
-                        quam, suscipit tempus eros lobortis at. Nunc{" "}
-                    </p>
-                    <div className="flex">
-                        <div className="w-1/2">
-                            <h1 className="text-2xl text-center md:text-left md:text-3xl leading-7">
-                                <span className="font-bold">Backend</span>
-                                <br />
-                                Development
-                            </h1>
-                            <ul className="flex flex-wrap justify-center md:justify-start space-x-3 p-4 md:p-2 md:pl-0 border-r md:border-none">
-                                <GameListElement src="/logos/django.png" />
-                                <GameListElement src="/logos/python.png" />
-                                <GameListElement src="/logos/node.png" />
-                                <GameListElement src="/logos/mongo.png" />
-                            </ul>
-                        </div>
-                        <div className="w-1/2">
-                            <h1 className="text-2xl text-center md:text-left md:text-3xl leading-7">
-                                <span className="font-bold">Frontend</span>
-                                <br />
-                                Development
-                            </h1>
-                            <ul className="flex flex-wrap justify-center md:justify-start space-x-3 p-4 md:p-2 md:pl-0">
-                                <GameListElement src="/logos/react.png" />
-                                <GameListElement src="/logos/js.png" />
-                                <GameListElement src="/logos/ts.png" />
-                                <GameListElement src="/logos/next.png" />
-                                <GameListElement src="/logos/tail.png" />
-                                <GameListElement src="/logos/boot.png" />
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TechnologiesElement />
+            {showTips ? (
+                <ReactTooltip className="bg-white p-2 rounded shadow transition-all" />
+            ) : null}
         </div>
     );
 }
