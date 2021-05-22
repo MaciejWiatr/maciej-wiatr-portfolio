@@ -3,11 +3,12 @@ import PixelatedProp from "../../assets/pixelated_prop.svg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
+import { FiLink } from "react-icons/fi";
 
-const TechnologiesElement = () => {
+const TechnologiesSection = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.from("#technologies__title", {
+        gsap.from("#technologies__title p", {
             scrollTrigger: "#technologies__title",
             x: -200,
             stagger: 0.1,
@@ -15,10 +16,25 @@ const TechnologiesElement = () => {
             ease: "back",
             opacity: 0,
         });
+        // .from(".tech-list__element", {
+        //     y: 20,
+        //     stagger: 0.1,
+        //     duration: 0.85,
+        //     ease: "back",
+        //     opacity: 0,
+        // });
+        gsap.from(".tech-list__element", {
+            scrollTrigger: "#tech-list__title",
+            y: 20,
+            stagger: 0.1,
+            duration: 1,
+            ease: "back",
+            opacity: 0,
+        });
     }, []);
 
     return (
-        <section className="w-full relative">
+        <section id="technologies" className="w-full relative text-dark">
             <div className="hidden md:block absolute right-0 w-96 -top-14 z-0">
                 <PixelatedProp />
             </div>
@@ -39,7 +55,10 @@ const TechnologiesElement = () => {
                 </p>
                 <div className="flex">
                     <div className="w-1/2">
-                        <h1 className="text-2xl text-center md:text-left md:text-3xl leading-7">
+                        <h1
+                            id="tech-list__title"
+                            className="text-2xl text-center md:text-left md:text-3xl leading-7"
+                        >
                             <span className="font-bold">Frontend</span>
                             <br />
                             Development
@@ -93,12 +112,17 @@ const TechnologiesElement = () => {
                         </ul>
                     </div>
                 </div>
-                <a href="/" className="text-primary">
-                    Wyświetl wszystkie
-                </a>
+                <div className="mt-2">
+                    <a
+                        href="/"
+                        className="text-gray-500 hover:text-primary flex items-center space-x-1"
+                    >
+                        <p>Wyświetl wszystkie</p> <FiLink />
+                    </a>
+                </div>
             </div>
         </section>
     );
 };
 
-export default TechnologiesElement;
+export default TechnologiesSection;

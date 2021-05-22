@@ -16,6 +16,7 @@ module.exports = {
                 dark: "#161616",
                 "secondary-gray": "#B2B2B2",
                 "bg-gray": "#0F1221",
+                "primary-orange": "#EC615B",
             },
             maxWidth: {
                 "screen-3xl": "1720px",
@@ -23,6 +24,12 @@ module.exports = {
             },
             minWidth: {
                 16: "16rem",
+            },
+            padding: {
+                26: "6.5rem",
+            },
+            width: {
+                112: "32rem",
             },
         },
     },

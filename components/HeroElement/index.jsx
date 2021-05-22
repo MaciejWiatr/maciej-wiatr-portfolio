@@ -1,8 +1,8 @@
 import HeroImg from "../../assets/hero_img.svg";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
-const HeroElement = () => {
+const HeroSection = () => {
     useEffect(() => {
         gsap.timeline().from("#hero__title p", {
             x: -200,
@@ -14,7 +14,7 @@ const HeroElement = () => {
     }, []);
 
     return (
-        <section className="w-full mt-16 lg:mt-0">
+        <section id="hero" className="w-full mt-16 lg:mt-0">
             <div className="relative p-5 pt-20 pb-20 lg:pt-40 lg:pb-40 bg-purple-bg w-full h-full md:h-4/5 rounded-lg flex justify-start overflow-hidden">
                 <div className="w-full items-center lg:items-start lg:w-2/3 flex flex-col justify-center lg:pl-20 relative z-20">
                     <h1
@@ -58,4 +58,4 @@ const HeroElement = () => {
     );
 };
 
-export default HeroElement;
+export default HeroSection;
