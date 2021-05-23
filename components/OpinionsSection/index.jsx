@@ -1,6 +1,6 @@
 import { FiRss, FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { css } from "@emotion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { useOpinions } from "../../src/hooks/useOpinions";
 
@@ -13,6 +13,10 @@ const OpinionsSection = () => {
             if (add) {
                 return v + 8;
             } else {
+                if (sliderVal < ~(opinions.length * 8)) {
+                    console.log("max");
+                    return v;
+                }
                 return v - 8;
             }
         });
@@ -20,7 +24,7 @@ const OpinionsSection = () => {
 
     useEffect(() => {
         gsap.to("#slider__container", {
-            x: `${sliderVal * 1.5}rem`,
+            x: `${sliderVal * 1.25}rem`,
             duration: 0.4,
             ease: "power2",
         });
@@ -86,8 +90,10 @@ const OpinionsSection = () => {
                             bg-white top-1/2 flex flex-center text-xl transform -translate-y-5
                             shadow-lg transition hover:scale-110 focus:outline-none focus:ring-4"
                         css={css`
-                            opacity: ${sliderVal < 20 ? 1 : 0};
-                            pointer-events: ${sliderVal < 20
+                            opacity: ${sliderVal > ~(opinions.length * 8)
+                                ? 1
+                                : 0};
+                            pointer-events: ${sliderVal > ~(opinions.length * 8)
                                 ? "initial"
                                 : "none"};
                             transition: opacity 0.5s ease;

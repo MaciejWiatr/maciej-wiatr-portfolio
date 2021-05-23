@@ -2,7 +2,7 @@ import { FiGithub, FiGlobe } from "react-icons/fi";
 import { useProjects } from "../../src/hooks/useProjects";
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 function ProjectGridItemSmall({ project, updateSelected }) {
     const [isHovered, setHovered] = useState(false);
@@ -48,16 +48,19 @@ const ProjectSection = () => {
                         Moje projekty i realizacje
                     </h3>
                     <div className="flex items-center">
-                        <h2 className="text-4xl font-bold">
+                        <h2
+                            exit={{ opacity: 0 }}
+                            className="text-4xl font-bold"
+                        >
                             {selectedProject.name}
                         </h2>
                     </div>
-                    <ul className="flex mt-2">
+                    <ul className="flex mt-2 mb-2">
                         {selectedProject.technologies.map((tech, index) => {
                             return (
                                 <li
                                     key={index}
-                                    className="p-1 pl-2 pr-2 bg-primary rounded-lg mr-1 text-white text-sm"
+                                    className="p-1 pl-3 pr-3 bg-gray-300 rounded-full mr-1 text-white text-sm"
                                 >
                                     {tech}
                                 </li>
@@ -85,7 +88,7 @@ const ProjectSection = () => {
                     </div>
                 </div>
                 <div className="projects__grid pt-2 lg:pt-6 p-6 w-full lg:w-2/3">
-                    <div className="projects__grid__item--big bg-primary rounded-lg overflow-hidden relative">
+                    <div className="projects__grid__item--big rounded-lg overflow-hidden relative">
                         <Image
                             src={selectedProject.image}
                             layout="fill"
